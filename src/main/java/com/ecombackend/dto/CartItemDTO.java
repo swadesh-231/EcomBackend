@@ -3,16 +3,10 @@ package com.ecombackend.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CartItemDTO {
-    private Long cartItemId;
-    private CartDTO cart;
-    private ProductDTO product;
+    private Long productId;
     private Integer quantity;
-    private Double discountedPrice;
-    private Double productPrice;
-
 }

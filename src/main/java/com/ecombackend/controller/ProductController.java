@@ -6,6 +6,7 @@ import com.ecombackend.dto.ProductDTO;
 import com.ecombackend.dto.ProductResponse;
 import com.ecombackend.service.ProductService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,9 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
 
     @PostMapping("/admin/categories/{categoryId}/product")
     public ResponseEntity<ProductDTO> addProduct(@Valid @RequestBody ProductDTO productDTO,

@@ -1,6 +1,7 @@
 package com.ecombackend.service;
 
 import com.ecombackend.dto.CartDTO;
+import com.ecombackend.dto.CartItemDTO;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface CartService {
     CartDTO updateProductQuantityInCart(Long productId, Integer quantity);
     String deleteProductFromCart(Long cartId, Long productId);
     void updateProductInCarts(Long cartId, Long productId);
+    String createOrUpdateCartWithItems(List<CartItemDTO> cartItems);
 }
